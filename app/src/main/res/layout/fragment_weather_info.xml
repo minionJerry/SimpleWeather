@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/data_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/space_normal"
+        android:paddingBottom="@dimen/space_large"
+        android:visibility="invisible">
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="36dp"
+            android:layout_height="4dp"
+            android:background="@color/cardview_dark_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_large"
+            android:fontFamily="@font/nunito_sans"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line"
+            tools:text="Today is 24 f May" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_coords"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_small"
+            android:fontFamily="@font/nunito_sans"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            tools:text="Today is 24 f May" />
+
+        <ImageView
+            android:id="@+id/img_weather"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="@dimen/space_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_small"
+            android:fontFamily="@font/nunito_sans"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/img_weather"
+            app:layout_constraintStart_toEndOf="@id/img_weather"
+            app:layout_constraintTop_toTopOf="@id/img_weather"
+            tools:text="Cloudy" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_small"
+            android:fontFamily="@font/nunito_sans"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/img_weather"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_weather"
+            tools:text="30/17" />
+
+        <ImageView
+            android:id="@+id/img_uv"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="@dimen/space_small"
+            android:src="@drawable/ic_uv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_weather" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_uv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_small"
+            android:fontFamily="@font/nunito_sans"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/img_uv"
+            app:layout_constraintStart_toEndOf="@id/img_uv"
+            app:layout_constraintTop_toTopOf="@id/img_uv"
+            tools:text="Cloudy" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_small"
+            android:fontFamily="@font/nunito_sans"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/img_wind"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_wind"
+            tools:text="Cloudy" />
+
+        <ImageView
+            android:id="@+id/img_wind"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="@dimen/space_small"
+            android:layout_marginEnd="@dimen/space_small"
+            android:src="@drawable/ic_wind"
+            app:layout_constraintEnd_toStartOf="@id/tv_wind"
+            app:layout_constraintTop_toBottomOf="@id/img_weather" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/error_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_large"
+        android:layout_marginBottom="@dimen/space_normal"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center"
+        android:text="@string/error_msg"
+        android:textSize="27sp"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</FrameLayout>
