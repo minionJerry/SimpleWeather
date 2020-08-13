@@ -1,6 +1,6 @@
 ## Simple Weather :sunny: :cloud: :umbrella: :snowflake:
 
-Simple App that shows you the weather of any place on the map.
+Simple Weather App shows you the weather of any place on the map.
 Data is fetched from https://openweathermap.org/
 
 ### How to use?
